@@ -1,0 +1,63 @@
+#include <iostream>
+using namespace std;//allows you to use arrays like in Java
+#include <string>
+#include <algorithm>
+
+//Reverse a string using array
+void rev1(){
+  string y;
+  cout<<"input word"<<endl;
+  cin>>y;
+  cout<<y<<endl;
+  
+  char arr[y.length()];
+
+  for(int i=0; i<y.length(); i++){
+    arr[i]=y.at((y.length()-1)-i);
+    cout<<arr[i];
+  }
+}
+
+
+//reverse a string using the REVERSE library function 
+void rev2(string s){
+  reverse(s.begin(),s.end());
+  cout<<s<<endl;
+}
+
+
+//reverse a string using SWAP library function
+void rev3(string s){
+
+  int len = s.length();
+  for(int i=0; i<len/2; i++){
+    if(len%2==0){
+
+      swap(s[i],s[len-1-i]);
+
+    }
+    if(len%2!=0){
+
+      swap(s[i],s[len-1-i]);
+
+    }
+  }
+  cout<<s<<endl;
+  
+
+}
+
+
+
+
+
+int main() {
+
+  rev1();//function prompts input from user
+
+  rev2("max");
+
+  rev3("abcde");
+  
+
+}
